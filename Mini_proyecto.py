@@ -51,7 +51,6 @@ class Pila:
 
         print("----------------")
 
-
 # Menú principal
 def mostrar_menu():
     print("\n================================")
