@@ -1,4 +1,55 @@
+# Importamos deque para utilizarla como pila
+from collections import deque
 
+
+# Clase que representa la pila de cartas
+class Pila:
+
+    def __init__(self):
+        self.cartas = deque()
+
+    # Agregar una carta
+    def push(self, carta):
+        self.cartas.append(carta)
+
+    # Retirar la carta superior
+    def pop(self):
+        if not self.cartas:
+            print("La pila está vacía.")
+            return None
+        return self.cartas.pop()
+
+    # Consultar la carta superior
+    def cima(self):
+        if not self.cartas:
+            print("La pila está vacía.")
+            return None
+        return self.cartas[-1]
+
+    # Cantidad de cartas
+    def cantidad(self):
+        return len(self.cartas)
+
+    # Verificar si está vacía
+    def esta_vacia(self):
+        return len(self.cartas) == 0
+
+    # Vaciar la pila
+    def vaciar(self):
+        self.cartas.clear()
+
+    # Mostrar las cartas
+    def mostrar(self):
+        if not self.cartas:
+            print("\nLa pila está vacía.")
+            return
+
+        print("\n--- CARTAS EN LA PILA ---")
+
+        for carta in reversed(self.cartas):
+            print("|", carta, "|")
+
+        print("----------------")
 
 
 # Menú principal
